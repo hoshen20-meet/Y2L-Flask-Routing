@@ -1,4 +1,4 @@
-from model import Base, Product
+from model import Base, Product, product
 
 
 from sqlalchemy import create_engine
@@ -41,19 +41,23 @@ def query_all_products():
 
 def edit_product_by_id(id,name,price,picture_link,description):
     product=session.query(product).filter_by(id_number=id_number).one()
-    product.name=name
-    product.price=price
-    product.picture_link
-    product.description=description
+    product.name=name,
+    product.price=price,
+    product.picture_link,
+    product.description=description,
     session.commit()
 
-
+def allProducts():
+    return.session.query(product).all()
+    
 
 def add_to_cart(productID):
     product1 = Cart(productID)
     session.add(product1)
     session.commit()
 
+add_product('ok boomer',69, 'ok boomer',None)
+product = query_all_products()
 
 
 

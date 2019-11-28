@@ -16,14 +16,26 @@ def store():
     return render_template("store.html")
 
 
-@app.route("/cart")
+@app.route("/cart")    
 def cart():
     return render_template('cart.html')
+
+@app.route("/cart/<int:p_id>")
+def p_id(p_id):
+	add_to_cart()
+	render_template('/cart')
+
+
 
 @app.route('/about')
 def about():
     return render_template('about.html')
 #####################
+
+
+
+
+
 
 
 if __name__ == '__main__':

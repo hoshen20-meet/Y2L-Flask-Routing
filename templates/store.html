@@ -6,7 +6,6 @@
 <body>
 
 	<h1>this is my store, its is mine</h1>
-
 	<p>it is my store and no one else's</p>
 
 	<img src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6291/6291646_sd.jpg" style="width: 200px;" style="height: 200px;">
@@ -17,6 +16,19 @@
 
 	<a href="/"> this is a link back the the homepage</a>
 
+	{% for p in products %}	
+	<div class="card">
+		<h1>{{p.name}}</h1>
+		<p>{{p.description}}</p>
+		<p>{{p.price}}</p>
+		<img src="../static/{{p.picture_link}}">
 
+		<a href="cart/{{p.id}}">add to cart</a> <br>
+		
+
+
+
+	</div>
+	{% endfor %}
 </body>
 </html>
